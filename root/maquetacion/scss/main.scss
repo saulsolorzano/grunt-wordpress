@@ -1,0 +1,99 @@
+/*!
+Theme Name: {%= title %}
+Version: {%= version %}
+Author: {%= author_name %}
+Author URI: {%= author_url %}
+*/
+/*------------------------------------*\
+    $TABLA DE CONTENIDO
+    Basado en la Guia de Harry Robert https://github.com/csswizardry/CSS-Guidelines
+\*------------------------------------*/
+/**
+ * SETTINGS...........Declaración de Variables SASS
+ * BITS...............Funciones y Mixins de SASS
+ * RESET..............Mezcla de reset de Boilerplate y Normalize
+ * ZINDEX.............Archivo con todos los z-index que se usan en el proyecto
+ *
+ * PLUGINS............Estilos de los Plugins usados
+ *
+ * SVG................Código de algunos SVG usados en la página
+ *
+ * GLOBAL CLASSES.....Clases que se usan en todo el sitio
+ * MAIN...............Declaraciones de alto nivel
+ * GRIDS..............Grids para la página
+ * LINKS..............Estilos de los Links
+ *
+ * HEADER.............Elementos de la cabecera
+ * LOGO...............Logo de la página web
+ * NAV................Menú
+ * FOOTER.............Footer de la página
+ *
+ * FORM...............Estilos de formulario
+ * BTN.......,........Botones de la página
+ * HERO...............Banner superior
+ * BREADCRUMBS........Navegación de breadcrumbs
+ *
+ * HELPERS............Clases de ayuda
+ * PRINT..............Estilos de impresión
+ */
+@import "susy";
+
+
+/*------------------------------------*\
+    $GENERIC
+\*------------------------------------*/
+@import "generic/settings";
+@import "generic/bits";
+@import "generic/reset";
+@import "generic/zindex";
+
+
+
+/*------------------------------------*\
+    $PLUGINS
+\*------------------------------------*/
+@import "vendor/plugins";
+
+
+
+/*------------------------------------*\
+    $SVG
+\*------------------------------------*/
+@import "base/svg";
+
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+@import "base/global-classes";
+@import "base/main";
+@import "base/grids";
+@import "base/links";
+
+
+/*------------------------------------*\
+    $PAGE STRUCTURE - GENERAL
+\*------------------------------------*/
+@import "objects/header";
+@import "objects/logo";
+@import "objects/nav";
+@import "objects/footer";
+
+
+/*------------------------------------*\
+		$COMPONENTS
+\*------------------------------------*/
+@import "objects/form";
+@import "objects/btn";
+@import "objects/hero";
+@import "objects/breadcrumbs";
+
+
+
+/*------------------------------------*\
+    $EXTRA HELP
+\*------------------------------------*/
+@import "generic/helpers";
+@import "generic/print";
+
+

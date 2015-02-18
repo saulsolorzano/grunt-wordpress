@@ -1,0 +1,3 @@
+{
+	"wordpress/wp-content/themes/tema/": "wordpress/wp-content/themes/{%= name %}/"
+}

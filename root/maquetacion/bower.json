@@ -1,0 +1,23 @@
+{
+	"name": "{%= name %}",
+	"version": "{%= version %}",
+	"authors": [
+		"{%= author_name %} <{%= author_email %}>"
+	],
+	"description": "{%= description %}",
+	"keywords": [
+		"{%= tags %}"
+	],
+	"license": "{%= licenses %}",
+	"homepage": "{%= homepage %}",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+	}
+}

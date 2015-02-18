@@ -1,0 +1,20 @@
+# {%= title %}
+
+# TEAM/EQUIPO
+	Developer/Desarrollador	:	{%= author_name %}
+	Contact/Contacto		:	{%= author_email %}
+	URI						:	{%= author_url %}
+	Twitter					:	{%= author_twitter %}
+
+
+# SITE/SITIO
+	Created/Creado: {%= grunt.template.today("yyyy-mm-dd") %}
+
+# TECHNOLOGY COLOPHON/TECNOLOGÍA
+
+	- HTML5
+	- CSS3
+	- jQuery
+	- Modernizr
+	- Wordpress
+	- Yeoman
