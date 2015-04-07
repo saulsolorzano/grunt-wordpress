@@ -18,10 +18,8 @@ function mb_remove_script_version( $src ){
  * Registrando JS para front de la página - Footer
  */
 function ss_scripts() {
-	wp_register_script( 'plugins-script', get_template_directory_uri() . '/js/plugins-min.js', array( 'jquery'), '1', true );
-	wp_register_script( 'main-script', get_template_directory_uri() . '/js/main-min.js', array( 'jquery'), '1', true );
-	wp_register_script( 'modernizr-script', get_template_directory_uri() . '/js/vendor/modernizr-min.js', array(), '2.6.1', false );
-	wp_enqueue_script( 'plugins-script' );
+	wp_register_script( 'main-script', get_template_directory_uri() . '/js/app.min.js', array( 'jquery'), '1.0.0', true );
+	wp_register_script( 'modernizr-script', get_template_directory_uri() . '/js/vendor/modernizr.min.js', array(), '2.8.3', false );
 	wp_enqueue_script( 'main-script' );
 	wp_enqueue_script( 'modernizr-script' );
 }
@@ -42,6 +40,37 @@ function remove_width_attribute( $html ) {
    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
    return $html;
 }
+
+
+/**
+ * Agregar soporte para subir un svg
+ */
+function custom_upload_mimes($existing_mimes = array()) {
+    $existing_mimes['svg'] = 'mime/type';
+    $existing_mimes['svgz'] = 'mime/type';
+    return $existing_mimes;
+}
+
+add_filter('upload_mimes', 'custom_upload_mimes');
+
+/**
+ * ACF: Options page
+ */
+if (function_exists('acf_add_options_page')) {
+
+    acf_add_options_page(array(
+        'page_title' => 'Opciones del Tema',
+        'menu_title' => 'Opciones',
+        'menu_slug' => 'opciones-generales-tema',
+        'icon_url' => 'dashicons-hammer',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+}
+/*
+ * Ocultar barra de abministración
+ *  */
+add_filter('show_admin_bar', '__return_false');
 
 /**
  * Colocando Créditos en footer de Wordpress

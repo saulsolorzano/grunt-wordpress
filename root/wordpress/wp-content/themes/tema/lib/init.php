@@ -31,7 +31,7 @@ function ss_setup() {
 	// add_image_size( 'single-image', 800, 9999 );
 
 	// Agregando soporte de post formats
-	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'link', 'image', 'quote', 'audio' ) );
+	// add_theme_support( 'post-formats', array( 'aside', 'gallery', 'video', 'link', 'image', 'quote', 'audio' ) );
 
 	// Agregando scripts
 	add_action( 'wp_enqueue_scripts', 'ss_scripts' );
@@ -44,8 +44,6 @@ function ss_setup() {
 	add_filter('wp_trim_excerpt', 'new_excerpt_more');
 
 	// Haciendo posible el responsive
-	add_filter( 'portafolio_logo-cliente_thumbnail_html', 'remove_width_attribute', 10);
-	add_filter( 'portafolio_portada-image_thumbnail_html', 'remove_width_attribute', 10 );
 	add_filter( 'post_thumbnail_html', 'remove_width_attribute', 10 );
 	add_filter( 'image_send_to_editor', 'remove_width_attribute', 10 );
 
