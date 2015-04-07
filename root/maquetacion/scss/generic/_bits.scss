@@ -24,19 +24,20 @@
 
 /*Media Queries*/
 $breakpoints: (
-	"alpha"				:	"(min-width: 80.5em)",
-	"beta"				:	"(min-width: 1025px)",
-	"gamma"				:	"(min-width: 800px)",
-	"delta"				:	"(min-width: 720px)",
-	"reverse-delta"		:	"(max-width: 720px)",
-	"epsilon"			:	"(min-width: 480px)"
-);
-
-@mixin breakpoint($point) {
-	$query: map-get($breakpoints, $point);
-
-	@media #{$query} {
-		@content;
+	mobile:		320px,
+	tablet: 	740px,
+	desktop:	980px,
+	wide:		1300px
+) !default;
+@mixin respond-to($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (min-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+	@else {
+		@warn "No existe ningún valor bajo el nombre `#{$breakpoint}`. "
+			+ "Por favor, asegurate que está definido en el mapa `$breakpoints`";
 	}
 }
 // Centrar verticalmente
