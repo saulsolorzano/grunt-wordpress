@@ -71,6 +71,37 @@ class ContentType {
 
 }
 
+function register_taxonomies($sitio, $name, $type, $slug) {
+//    return;
+    $labels_cat = array(
+        'name' => _x($name , 'Taxonomy General Name', $sitio),
+        'singular_name' => _x('Categoría', 'Taxonomy Singular Name', $sitio),
+        'menu_name' => __($name, $sitio),
+        'all_items' => __('Todas', $sitio),
+        'parent_item' => __($name . ' padre', $sitio),
+        'parent_item_colon' => __($name . ' padre:', $sitio),
+        'new_item_name' => __('Agregar nueva ' . $name, $sitio),
+        'add_new_item' => __('Agregar nueva', $sitio),
+        'edit_item' => __('Editar', $sitio),
+        'update_item' => __('Actualizar', $sitio),
+        'separate_items_with_commas' => __('Separar ' . $name . ' por comas', $sitio),
+        'search_items' => __('Buscar ' . $name, $sitio),
+        'add_or_remove_items' => __('Agregar o borrar ' . $name , $sitio),
+        'choose_from_most_used' => __('Elegir de las más usuadas', $sitio),
+        'not_found' => __('No encontrado', $sitio)
+    );
+    $args_cat = array(
+        'labels' => $labels_cat,
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_nav_menus' => true,
+        'show_tagcloud' => false
+    );
+    register_taxonomy($slug, array($type), $args_cat);
+}
+
 
 /*********************************************************
 				Paginación
