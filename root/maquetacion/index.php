@@ -8,6 +8,8 @@
  * @author		{%= author_name %} <{%= author_email %}>
  * @version		{%= version %}
  */
+$page = 'home';
+$subpage = '';
 include 'header.php'; ?>
 
 

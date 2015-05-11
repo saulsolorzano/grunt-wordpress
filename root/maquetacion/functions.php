@@ -15,10 +15,7 @@ $site_title = '{%= title %}';
  *                las clases correspondientes
  */
 function body_class() {
-	global $page;
-	global $type;
-	global $template;
-
+	global $page, $type, $template;
 
 	if ( $type == 'page' ) {
 		if ( ! empty($template) ) {
@@ -37,13 +34,16 @@ function body_class() {
 			$class .= $temp;
 		}
 	}
+
 	if ( $type == 'single' ) {
 		$class = 'single ';
 		$class .= $temp;
 	}
+
 	if ( $type == 'blog' ) {
 		$class = 'blog';
 	}
+
 	if ( $page == '404' ) {
 		$class = 'error404';
 	}
@@ -54,11 +54,7 @@ function body_class() {
  * @return string Título de sitio
  */
 function wp_title() {
-	global $page;
-	global $title;
-	global $subpage;
-	global $subpage_title;
-	global $site_title;
+	global $page, $title, $subpage, $subpage_title, $site_title;
 	if ( empty($subpage) && $page != 'home' ) {
 		$wp_title = $title . ' | ' . $site_title;
 	} else {
@@ -75,10 +71,7 @@ function wp_title() {
  * @return string bloque completo de código de breadcrumb
  */
 function breadcrumb() {
-	global $title;
-	global $subpage_title;
-	global $subpage;
-	global $page;
+	global $title, $subpage_title, $subpage, $page;
 
 	$breadcrumb = '<div class="bcrumbs">';
 		$breadcrumb .= '<div class="breadcrumbs">';
@@ -100,9 +93,7 @@ function breadcrumb() {
  * @return string Titulo de la página
  */
 function the_title() {
-	global $title;
-	global $subpage_title;
-	global $subpage;
+	global $title, $subpage_title, $subpage;
 	if ( empty($subpage) ) {
 		$the_title = $title;
 	} else {
