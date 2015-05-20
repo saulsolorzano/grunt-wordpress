@@ -32,6 +32,8 @@ exports.template = function( grunt, init, done ) {
 				"grunt": "~0.4.5",
 				"grunt-contrib-concat": "~0.5.0",
 				"grunt-contrib-uglify": "~0.7.0",
+				"grunt-contrib-watch": "^0.6.1",
+				"grunt-svgstore": "^0.5.0",
 				"matchdep": "~0.3.0"
 			}
 		});

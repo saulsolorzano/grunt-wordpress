@@ -40,21 +40,32 @@ $breakpoints: (
 			+ "Por favor, asegurate que está definido en el mapa `$breakpoints`";
 	}
 }
+@mixin less-than($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media (max-width: map-get($breakpoints, $breakpoint)) {
+			@content;
+		}
+	}
+	@else {
+		@warn "No existe ningún valor bajo el nombre `#{$breakpoint}`. "
+			+ "Por favor, asegurate que está definido en el mapa `$breakpoints`";
+	}
+}
 // Centrar verticalmente
-@mixin vertical() {
+@mixin vertical {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 }
 // Centrar en página
-@mixin center() {
+@mixin center {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
 // Cover
-@mixin cover() {
+@mixin cover {
 	position: absolute;
 	top: 0;
 	left: 0;

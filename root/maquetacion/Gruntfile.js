@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				separator: ';',
 			},
 			dist: {
-				src: ['vendor/jquery.js', 'main.js'],
+				src: ['bower_components/jquery/dist/jquery.min.js', 'js/plugins.js', 'js/main.js'],
 				dest: 'js/app.js'
 			}
 		},
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 			production: {
 				options: {
 					mangle: true,
-					compress: true,
+					compress: false,
 					banner: '/*! Author: Agencia Digital Reactor\n' +
 						' * v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>' +
 						' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
@@ -30,6 +30,39 @@ module.exports = function(grunt) {
 					'js/app.min.js': ['js/app.js']
 				}
 			},
+		},
+		svgstore: {
+		    options: {
+		        prefix: "shape-",
+		        cleanup: true,
+		        svg: {
+		            style: "display: none;"
+		        }
+		    },
+		    default: {
+		        files: {
+		            "svg-defs.svg": ["svgs/*.svg"]
+		        }
+		    }
+		},
+		watch: {
+		    options: {
+		        livereload: true,
+		    },
+		    svg: {
+		        files: ['svgs/*.svg'],
+		        tasks: ['svgstore'],
+		        options: {
+		            spawn: false
+		        }
+		    },
+		    js: {
+		        files: ['js/*.js'],
+		        tasks: ['concat', 'uglify'],
+		        options: {
+		            spawn: false
+		        }
+		    }
 		}
 	});
 
