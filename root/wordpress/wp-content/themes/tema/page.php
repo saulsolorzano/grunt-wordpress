@@ -1,8 +1,7 @@
 <?php
 /**
- * Archivo principal.
+ * Archivo genérico para páginas
  *
- * Aquí se muestra todo lo que se ve en la portada de la página
  *
  * @package		{%= name %}
  * @author		{%= author_name %} <{%= author_email %}>
