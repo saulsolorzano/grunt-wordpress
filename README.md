@@ -10,7 +10,7 @@ Si aún no tienes instalado [grunt-init][] hazlo antes de continuar.
 Una vez que grunt-init esté instalado coloca este template en tu carpeta `~/.grunt-init/`. Es recomendado que uses git para clonar este template en la carpeta, de la siguiente manera:
 
 ```
-git clone https://saulsolorzano@bitbucket.org/saulsolorzano/grunt-wordpress.git ~/.grunt-init/wordpress
+git clone git@github.com:saulsolorzano/grunt-wordpress.git ~/.grunt-init/wordpress
 ```
 
 _(Usuarios de windows, por favor ver [the documentation][grunt-init] para tener el $PATH correcto de donde debe ir)_
