@@ -1,15 +1,24 @@
 # {%= title %}
 
-## Instrucciones de Uso
+***
+## Instalar dependencias de FrontEnd
 
-Lo primero que debemos hacer es iniciar git
+Hay que navegar hasta la ruta del tema `/wp-content/themes/mater/`
 
+Debemos primero descargar las dependencias de JS usando `bower` con el siguiente código
+
+```bash
+bower install
 ```
-git init
-git add README.md
-git commit -m "Initial commit."
+
+Se nos creará la carpeta `bower_components` en la raiz del tema y esta carpeta tendrá los plugins que nos descargamos.
+
+Ahora debemos intalar los plugins de grunt que usaremos para actualizar nuestros archivos
+
+Corremos el siguiente código:
+
+```bash
+npm install
 ```
 
-## Manejo de Branches
-
-Nueva prueba http://nvie.com/posts/a-successful-git-branching-model/
+Luego en nuestra terminal estando en el tema podemos correr `grunt watch` y este comando se quedara "escuchando" cualquier cambio que hagamos a `main.js` y los compilará automáticamente a `app.min.js`
