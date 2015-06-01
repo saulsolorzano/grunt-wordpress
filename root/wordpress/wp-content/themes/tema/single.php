@@ -1,8 +1,6 @@
 <?php
 /**
- * Archivo principal.
- *
- * Aquí se muestra todo lo que se ve en la portada de la página
+ * Single de posts.
  *
  * @package		{%= name %}
  * @author		{%= author_name %} <{%= author_email %}>

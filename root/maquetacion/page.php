@@ -13,6 +13,7 @@ $subpage = '';
 $type = 'page';
 $template = '';
 $title = ' ';
+$subpage_title = ' ';
 include 'header.php';  ?>
 
 
