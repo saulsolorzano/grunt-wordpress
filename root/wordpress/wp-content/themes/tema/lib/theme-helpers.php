@@ -114,13 +114,15 @@ function reactor_numeric_posts_nav() {
 		return;
 
 	global $wp_query;
+	$paginas = new WP_Query($args);
+	$html = '';
 
 	/** Stop execution if there's only 1 page */
-	if( $wp_query->max_num_pages <= 1 )
+	if ($paginas->max_num_pages <= 1)
 		return;
 
-	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-	$max   = intval( $wp_query->max_num_pages );
+	$paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
+	$max = intval($paginas->max_num_pages);
 
 	/**	Add current page to the array */
 	if ( $paged >= 1 )
