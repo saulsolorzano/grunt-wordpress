@@ -1,6 +1,6 @@
 <?php
 /**
- * Funciones de {%= title %}
+ * Funciones y definiciones de {%= title %}
  *
  * @package		{%= name %}
  * @author		{%= author_name %} <{%= author_email %}>
