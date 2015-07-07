@@ -150,7 +150,13 @@ $breakpoints: (
 }
 // Mixin que usa la función de convertir
 // Valores a REM para crear fuentes
-@mixin font-size($size) {
+@mixin font-size($size, $line-height) {
+	line-height: $line-height;
+	line-height: cr($line-height);
 	font-size: $size;
 	font-size: cr($size);
+}
+// Funcion para agarrar colores, sacada de The guardian
+@function color($name, $palette) {
+    @return map-get($palette, $name);
 }
