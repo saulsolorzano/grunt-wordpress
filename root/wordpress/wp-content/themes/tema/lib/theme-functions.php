@@ -37,8 +37,8 @@ register_sidebar();
  * Quitando Width y Height de todas las imagenes - Sin esto el responsive no sirve
  */
 function remove_width_attribute( $html ) {
-   $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
-   return $html;
+	 $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
+	 return $html;
 }
 
 
@@ -46,9 +46,9 @@ function remove_width_attribute( $html ) {
  * Agregar soporte para subir un svg
  */
 function custom_upload_mimes($existing_mimes = array()) {
-    $existing_mimes['svg'] = 'mime/type';
-    $existing_mimes['svgz'] = 'mime/type';
-    return $existing_mimes;
+		$existing_mimes['svg'] = 'mime/type';
+		$existing_mimes['svgz'] = 'mime/type';
+		return $existing_mimes;
 }
 
 add_filter('upload_mimes', 'custom_upload_mimes');
@@ -58,14 +58,14 @@ add_filter('upload_mimes', 'custom_upload_mimes');
  */
 if (function_exists('acf_add_options_page')) {
 
-    acf_add_options_page(array(
-        'page_title' => 'Opciones del Tema',
-        'menu_title' => 'Opciones',
-        'menu_slug' => 'opciones-generales-tema',
-        'icon_url' => 'dashicons-hammer',
-        'capability' => 'edit_posts',
-        'redirect' => false
-    ));
+		acf_add_options_page(array(
+				'page_title' => 'Opciones del Tema',
+				'menu_title' => 'Opciones',
+				'menu_slug' => 'opciones-generales-tema',
+				'icon_url' => 'dashicons-hammer',
+				'capability' => 'edit_posts',
+				'redirect' => false
+		));
 }
 /*
  * Ocultar barra de abministración
@@ -76,7 +76,7 @@ add_filter('show_admin_bar', '__return_false');
  * Colocando Créditos en footer de Wordpress
  */
 function modify_footer_admin () {
-  echo 'Creado por <a href="http://reactor.cl">Agencia Digital Reactor</a>. Potenciado por <a href="http://www.wordpress.org">WordPress</a>';
+	echo 'Creado por <a href="http://reactor.cl">Agencia Digital Reactor</a>. Potenciado por <a href="http://www.wordpress.org">WordPress</a>';
 }
 /**
  * Colocando logo de Saul en pantalla de login
@@ -93,4 +93,9 @@ function ss_url_login(){
 }
 function ss_url_title(){
 	return 'Agencia Digital Reactor'; // The title of your link
+}
+
+function remove_recent_comments_style() {
+	global $wp_widget_factory;
+	remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
 }

@@ -53,6 +53,9 @@ function ss_setup() {
 	// Logo en el Home
 	add_action('login_head', 'login_styles');
 
+	//Quitando estilos de comentarios
+	add_action('widgets_init', 'remove_recent_comments_style');
+
 	// Cambiando links y titulo
 	add_filter('login_headerurl', 'ss_url_login');
 	add_filter('login_headertitle', 'ss_url_title');
