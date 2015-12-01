@@ -71,6 +71,22 @@ if (function_exists('acf_add_options_page')) {
  * Ocultar barra de abministración
  *  */
 add_filter('show_admin_bar', '__return_false');
+/**
+ * Limpiando nombre de archivo antes de la subida
+ * @param  string $filename pasamos el nombre del archivo
+ * @return string           nos retorna el nombre del archivo sin caracteres especiales
+ */
+function sanitize_filename_on_upload($filename) {
+	$exp = explode('.',$filename);
+	$ext = end($exp);
+	// Replace all weird characters
+	$sanitized = preg_replace('/[^a-zA-Z0-9-_.]/','', substr($filename, 0, -(strlen($ext)+1)));
+	// Replace dots inside filename
+	$sanitized = str_replace('.','-', $sanitized);
+	return strtolower($sanitized.'.'.$ext);
+}
+
+add_filter('sanitize_file_name', 'sanitize_filename_on_upload', 10);
 
 /**
  * Colocando Créditos en footer de Wordpress
