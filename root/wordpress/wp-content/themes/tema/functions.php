@@ -18,4 +18,3 @@ require_once( get_template_directory() . '/lib/theme-helpers.php');
 /****************************************
 	Funciones del tema propias
 *****************************************/
-
