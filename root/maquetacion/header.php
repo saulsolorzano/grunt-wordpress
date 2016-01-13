@@ -20,3 +20,4 @@ include 'functions.php';
 		<script src="js/vendor/modernizr.js"></script>
 	</head>
 	<body <?php body_class(); ?>>
+		<div class="page-wrap">

@@ -177,3 +177,18 @@ $breakpoints: (
     bottom: 0;
   }
 }
+// Mixin para sticky footer
+@mixin sticky($footer-height, $clase-wrap, $clase-footer) {
+	.#{$clase-wrap} {
+		min-height: 100%;
+		margin-bottom: -$footer-height;
+	}
+	.#{$clase-wrap}:after {
+		content: "";
+		display: block;
+		height: $footer-height;
+	}
+	.#{$clase-footer} {
+		height: $footer-height;
+	}
+}

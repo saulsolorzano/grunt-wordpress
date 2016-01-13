@@ -7,6 +7,10 @@
  * @version		{%= version %}
  */
 ?>
+	</div><!--/.page-wrap-->
+	<footer class="footer">
+
+	</footer><!-- /.footer -->
 	<script src="js/app.min.js"></script>
 	</body>
 </html>
