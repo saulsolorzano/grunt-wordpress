@@ -1,6 +1,5 @@
 (function($) {
 	// Tamaño de la pantalla
-	var $window = $(window);
-
-	windowSize	= $window.width();
+	var $window = $(window),
+		windowSize	= $window.width();
 })(jQuery);

@@ -1,5 +1,6 @@
 <?php
 /**
+ * Página de error 404
  *
  *
  * @package		{%= name %}
@@ -9,7 +10,7 @@
  */
 $page = '';
 $subpage = '';
-$type = 'page';
+$type = '404';
 $title = ' ';
 $subpage_title = ' ';
 include 'header.php';  ?>

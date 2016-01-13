@@ -17,27 +17,16 @@ $site_title = '{%= title %}';
 function body_class() {
 	global $page, $type, $template;
 
-	if ( $type == 'page' ) {
-		if ( ! empty($template) ) {
-			$temp = 'page-template-'.$template;
-		}
-	} elseif ( $type == 'single' ) {
-		$temp = $template;
-	}
 
 	if ( $page == 'home' ) {
 		$class = 'home';
 	}
 	if ( $type == 'page' ) {
 		$class = 'page ';
-		if ( ! empty($temp) ) {
-			$class .= $temp;
-		}
 	}
 
 	if ( $type == 'single' ) {
 		$class = 'single ';
-		$class .= $temp;
 	}
 
 	if ( $type == 'blog' ) {

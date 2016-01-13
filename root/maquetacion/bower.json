@@ -19,5 +19,7 @@
 		"tests"
 	],
 	"dependencies": {
+		"jquery": "~2.2.0",
+		"jquery-validation": "jquery-validate#~1.14.0"
 	}
 }
