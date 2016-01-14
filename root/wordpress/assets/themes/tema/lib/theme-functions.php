@@ -19,7 +19,7 @@ function mb_remove_script_version( $src ){
  */
 function ss_scripts() {
 	wp_register_script( 'main-script', get_template_directory_uri() . '/js/app.min.js', array( 'jquery'), '1.0.0', true );
-	wp_register_script( 'modernizr-script', get_template_directory_uri() . '/js/vendor/modernizr.min.js', array(), '2.8.3', false );
+	wp_register_script( 'modernizr-script', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false );
 	wp_enqueue_script( 'main-script' );
 	wp_enqueue_script( 'modernizr-script' );
 }
