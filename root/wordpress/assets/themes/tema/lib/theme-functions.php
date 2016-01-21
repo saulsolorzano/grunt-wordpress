@@ -30,10 +30,6 @@ function new_excerpt_more($excerpt) {
 	return str_replace('[...]', ' ', $excerpt);
 }
 /**
- * Registrando Sidebar
- */
-register_sidebar();
-/**
  * Quitando Width y Height de todas las imagenes - Sin esto el responsive no sirve
  */
 function remove_width_attribute( $html ) {
