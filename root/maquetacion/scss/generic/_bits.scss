@@ -192,3 +192,27 @@ $breakpoints: (
 		height: $footer-height;
 	}
 }
+
+@mixin credits($color) {
+	.credits {
+	    font-weight: 300;
+	    color: $color;
+		text-align: center;
+	    @include font-size(14px, 16px);
+	    a {
+	        color: $color;
+	    }
+		svg {
+			width: 14px;
+			height: 14px;
+			fill: $color;
+	        margin-left: 5px;
+			transition: fill .3s ease;
+		}
+		&:hover {
+			svg {
+				fill: rgb(61,196,204);
+			}
+		}
+	}
+}
