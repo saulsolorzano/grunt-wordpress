@@ -25,21 +25,23 @@ config.codekit
 # Descargas de NPM #
 node_modules
 
+# Descargas de Bower #
+bower_components
+
 # Carpetas de Wordpress que no necesitamos #
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/plugins/
-wp-content/backup-db/
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
-wp-content/blogs.dir/
+wordpress/wp-content/upgrade/
+wordpress/wp-content/uploads/
+wordpress/wp-content/plugins/
+wordpress/wp-content/backup-db/
+wordpress/wp-content/advanced-cache.php
+wordpress/wp-content/wp-cache-config.php
+wordpress/wp-content/blogs.dir/
 *.log
-wp-content/cache/
-wp-content/backups/
+wordpress/wp-content/cache/
+wordpress/wp-content/backups/
 sitemap.xml.gz
-wordpress/wp-include
+wordpress/wp-includes
 wordpress/wp-admin
 
 # Configuración de ambiente local de desarrollo #
-
-config/env/
+nbproject/

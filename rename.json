@@ -1,0 +1,3 @@
+{
+	"wordpress/assets/themes/tema/": "wordpress/assets/themes/{%= name %}/"
+}
