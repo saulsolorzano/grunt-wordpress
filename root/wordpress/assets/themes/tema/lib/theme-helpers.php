@@ -70,7 +70,14 @@ class ContentType {
 	}
 
 }
-
+/**
+ * Función para registrar una nueva taxonomía para un custom post type
+ * @param  [type] $sitio [description]
+ * @param  [type] $name  [description]
+ * @param  [type] $type  [description]
+ * @param  [type] $slug  [description]
+ * @return [type]        [description]
+ */
 function register_taxonomies($sitio, $name, $type, $slug) {
 //    return;
     $labels_cat = array(

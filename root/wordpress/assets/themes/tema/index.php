@@ -8,8 +8,17 @@
  * @author		{%= author_name %} <{%= author_email %}>
  * @version		{%= version %}
  */
-get_header(); ?>
+ */
+if (!class_exists('Timber')) {
+    echo 'Timber not activated. Make sure you activate the plugin.';
+    return;
+}
 
-
-
-<?php get_footer(); ?>
+$context = Timber::get_context();
+$context['posts'] = Timber::get_posts();
+$context['foo'] = 'bar';
+$templates = array('index.twig');
+if (is_home()) {
+    array_unshift($templates, 'home.twig');
+}
+Timber::render($templates, $context);
