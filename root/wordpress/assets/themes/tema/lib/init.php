@@ -74,3 +74,4 @@ function ss_setup() {
 endif; // ss_setup
 
 add_action( 'after_setup_theme', 'ss_setup' );
+add_action('admin_head', 'css_acf');

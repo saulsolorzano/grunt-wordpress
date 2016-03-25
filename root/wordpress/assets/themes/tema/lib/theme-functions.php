@@ -83,7 +83,9 @@ function sanitize_filename_on_upload($filename) {
 }
 
 add_filter('sanitize_file_name', 'sanitize_filename_on_upload', 10);
-
+function css_acf() {
+    echo '<style>.acf-field .acf-label {margin: 0 0 25px;}</style>';
+}
 /**
  * Colocando Créditos en footer de Wordpress
  */
