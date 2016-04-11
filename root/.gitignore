@@ -9,9 +9,10 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-# Archivos de projecto de sublime #
+# Archivos de projecto #
 *.sublime-project
 *.sublime-workspace
+nbproject/
 
 # cache de sass dentro del tema y la maquetación #
 wp-content/themes/[[tema]]/.sass-cache/
