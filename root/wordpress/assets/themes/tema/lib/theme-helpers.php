@@ -104,7 +104,12 @@ function register_taxonomies($sitio, $name, $type, $slug) {
         'show_ui' => true,
         'show_admin_column' => true,
         'show_in_nav_menus' => true,
-        'show_tagcloud' => false
+        'show_tagcloud' => false,
+        'query_var'     => true,
+        'rewrite'       => array(
+            'slug'          => $slug, // This controls the base slug that will display before each term
+            'with_front'    => false // Don't display the category base before
+        )
     );
     register_taxonomy($slug, array($type), $args_cat);
 }
