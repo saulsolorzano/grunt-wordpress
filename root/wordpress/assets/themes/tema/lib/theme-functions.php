@@ -122,3 +122,22 @@ function remove_recent_comments_style() {
 	global $wp_widget_factory;
 	remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style'));
 }
+
+/*
+ * Agregar permisos a los usuarios Editor para administrar usuarios.
+ *  */
+
+function add_cap_editor(){
+    $perfil = get_role('editor');
+    $perfil->add_cap('edit_users');
+    $perfil->add_cap('delete_users');
+    $perfil->add_cap('create_users');
+    $perfil->add_cap('list_users');
+    $perfil->add_cap('remove_users');
+    $perfil->add_cap('add_users');
+    $perfil->add_cap('promote_users');
+    $perfil->add_cap('add_users');
+    // Editar opciones del tema
+    $perfil->add_cap('edit_theme_options');
+}
+add_action( 'admin_init', 'add_cap_editor');
