@@ -51,8 +51,8 @@ function remove_width_attribute( $html ) {
  * Agregar soporte para subir un svg
  */
 function custom_upload_mimes($existing_mimes = array()) {
-		$existing_mimes['svg'] = 'mime/type';
-		$existing_mimes['svgz'] = 'mime/type';
+		$existing_mimes['svg'] = 'image/svg+xml';
+		$existing_mimes['svgz'] = 'image/svg+xml';
 		return $existing_mimes;
 }
 
