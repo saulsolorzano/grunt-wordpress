@@ -24,3 +24,11 @@ grunt-init wordpress
 ```
 
 _Por favor tomar en consideración que este template generará archivos en el directorio actual así que si no quieres sobreescribir archivos cambia a un directorio nuevo antes de correrlo._
+
+## Tamaños básicos de imágenes
+* Imagen de login de wordpress: *326x146*, debe llamarse `wdt_logo.png` y tiene que estar dentro de la carpeta `/img/` del tema
+* Imagen de tema en panel de wordpress *1200x900* y debe llamarse `screenshot.jpg` o `screenshot.png` y tiene que estar en la raíz del tema.
+
+***
+### Recordatorios
+* Al pasar el proyecto a Backend cambiar el nombre del tema de [tema] a {proyecto}
