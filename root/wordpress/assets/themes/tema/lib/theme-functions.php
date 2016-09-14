@@ -3,7 +3,7 @@
  * Iniciando funciones del tema
  *
  * @package		RisingPhoenex
- * @author		Agencia Digital Reactor <contacto@reactor.cl>
+ * @author		{%= author_name %} <{%= author_email %}>
  * @version		1.0.0
  */
 
@@ -99,7 +99,7 @@ function css_acf() {
  * Colocando Créditos en footer de Wordpress
  */
 function modify_footer_admin () {
-	echo 'Creado por <a href="http://reactor.cl">Agencia Digital Reactor</a>. Potenciado por <a href="http://www.wordpress.org">WordPress</a>';
+	echo 'Creado por <a href="{%= author_url %}">{%= author_name %}</a>. Potenciado por <a href="http://www.wordpress.org">WordPress</a>';
 }
 /**
  * Colocando logo de Saul en pantalla de login
@@ -112,10 +112,10 @@ function login_styles() {
  * Asignando dirección y Título al link del login
  */
 function ss_url_login(){
-	return 'http://reactor.cl/'; // The root of your site or any relative link
+	return '{%= author_url %}'; // The root of your site or any relative link
 }
 function ss_url_title(){
-	return 'Agencia Digital Reactor'; // The title of your link
+	return '{%= author_name %}'; // The title of your link
 }
 
 function remove_recent_comments_style() {

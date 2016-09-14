@@ -3,7 +3,7 @@
  * Iniciando funciones del tema
  *
  * @package		RisingPhoenex
- * @author		Agencia Digital Reactor <contacto@reactor.cl>
+ * @author		{%= author_name %} <{%= author_email %}>
  * @version		1.0.0
  */
 /*********************************************************

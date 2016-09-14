@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 				options: {
 					mangle: true,
 					compress: false,
-					banner: '/*! Author: Agencia Digital Reactor\n' +
+					banner: '/*! Author:{%= author_name %}\n' +
 						' * v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>' +
 						' * Copyright (c) <%= grunt.template.today("yyyy") %>;' +
 						' */\n'
