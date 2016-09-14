@@ -69,6 +69,9 @@ function ss_setup() {
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'qtranxf_wp_head_meta_generator');
     add_filter('disable_wpseo_json_ld_search', '__return_true');
+    add_filter('posts_join', 'cf_search_join' );
+    add_filter( 'posts_where', 'cf_search_where' );
+    add_filter( 'posts_distinct', 'cf_search_distinct' );
 }
 
 endif; // ss_setup
