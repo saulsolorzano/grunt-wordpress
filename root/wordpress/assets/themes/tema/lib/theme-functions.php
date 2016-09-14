@@ -144,6 +144,7 @@ add_action( 'admin_init', 'add_cap_editor');
 
 /**
  * Funciones para poder indexar en el buscador los custom fields
+ * https://adambalee.com/search-wordpress-by-custom-fields-without-a-plugin/
  */
 function cf_search_join( $join ) {
     global $wpdb;
