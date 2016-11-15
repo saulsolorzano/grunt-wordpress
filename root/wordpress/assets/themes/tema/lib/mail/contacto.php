@@ -19,12 +19,21 @@ if ($error > 0) {
 try {
     require 'PHPMailerAutoload.php';
     $mail = new PHPMailer(true);
-    $mail->setFrom($correo, $nombre);
+    $mail->isSMTP();
+    $mail->Host = 'email-smtp.us-east-1.amazonaws.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = '';
+    $mail->Password = '';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 25;
+    $mail->CharSet = 'UTF-8';
+    $mail->From = '';
+    $mail->FromName = $nombre;
     $mail->addReplyTo($correo, $nombre);
-    $mail->addAddress($destinatario, '');
+    $mail->addAddress($destinatario);
+    $mail->isHTML(true);
     $mail->Subject = 'Nuevo contacto desde {%= name %}';
 
-    $mail->CharSet = 'UTF-8';
     $body = file_get_contents(getcwd() . '/contacto.html', dirname(__FILE__));
     $placeholders = array('[destinatario]', '[nombre]', '[correo]', '[institucion]', '[asunto]', '[mensaje]', '[titulo]');
     $values = array($destinatario, $nombre, $correo, $institucion, $asunto, $mensaje, $titulo);
