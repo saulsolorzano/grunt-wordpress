@@ -20,17 +20,13 @@ function mb_remove_script_version( $src ){
 function ss_scripts() {
     if ( ! is_admin() ) {
         wp_deregister_script('jquery');
-        wp_register_script('jquery', (get_template_directory_uri() . "/js/vendor/jquery-1.12.1.min.js"), false, '1.12.1');
-        wp_enqueue_script('jquery');
         wp_deregister_script('jquery-migrate');
-        wp_register_script('jquery-migrate', (get_template_directory_uri() . "/js/vendor/jquery-migrate-1.2.1.min.js"), false, '1.2.1  ');
-        wp_enqueue_script('jquery-migrate');
     }
-    wp_register_script('main-script', get_template_directory_uri() . '/js/app.min.js', array('jquery'), '1.0.0', true);
-    wp_register_script('modernizr-script', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '2.8.3', false);
+    $main_js = filemtime(get_stylesheet_directory() . '/js/app.min.js');
+    wp_register_script('main-script', get_template_directory_uri() . '/js/app.min.js', array(), '1.'.date ("Ymd", $main_js).'.'.date ("His", $main_js), true);
     wp_enqueue_script('main-script');
-    wp_enqueue_script('modernizr-script');
 }
+
 
 /**
  * Excerpt más elegante
