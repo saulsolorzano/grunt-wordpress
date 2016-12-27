@@ -4,6 +4,6 @@
         <meta charset="utf-8">
         <title>{% if title_site %}{{ title_site }}{% else %}{{ site.name }}{% endif %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-        <link rel="stylesheet" href="{{site.theme.uri}}/css/main.css">
+        <link rel="stylesheet" href="{{site.theme.uri}}/css/main.css?v={{filemtime_css}}">
         <link rel="shortcut icon" href="{{site.theme.uri}}/img/favicon.ico" />
         {{function('wp_head')}}

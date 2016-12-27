@@ -16,7 +16,7 @@ require_once( get_template_directory() . '/lib/theme-helpers.php');
 
 
 /* * **************************************
-  Funciones para Timber 
+  Funciones para Timber
  * *************************************** */
 if (!class_exists('Timber')) {
     add_action('admin_notices', function() {
@@ -58,3 +58,6 @@ new StarterSite();
 /****************************************
 	Funciones del tema propias
 *****************************************/
+// Función para el css
+$filemtime_css = filemtime(get_stylesheet_directory() . '/css/main.css');
+$context['filemtime_css'] = date ("Y\.m\.d\.His", $filemtime_css);
