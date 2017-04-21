@@ -154,6 +154,43 @@ function user_profile_fields_disable() {
     add_action( 'admin_footer', 'user_profile_fields_disable_js' );
 }
 
+
+/**
+ * Disables selected fields in WP Admin user profile (profile.php, user-edit.php)
+ */
+function user_profile_fields_disable_js() {
+?>
+    <script>
+        jQuery(document).ready( function($) {
+            var fields_to_disable = ['role'];
+            for(i=0; i<fields_to_disable.length; i++) {
+                if ( $('#'+ fields_to_disable[i]).length ) {
+                    $('#'+ fields_to_disable[i]).attr("disabled", "disabled");
+                }
+            }
+        });
+    </script>
+<?php
+}
+
+/**
+ * Remove option administrator in WP Admin user profile (users.php, user-new.php)
+ */
+function user_list_fields_disable_js() {
+?>
+    <script>
+        jQuery(document).ready( function($) {
+            var fields_to_disable = ['new_role', 'role'];
+            for(i=0; i<fields_to_disable.length; i++) {
+                if ( $('#'+ fields_to_disable[i]).length ) {
+                    $('#'+ fields_to_disable[i]).find("option[value='administrator']").remove();
+                }
+            }
+        });
+    </script>
+<?php
+}
+
 /**
  * Funciones para poder indexar en el buscador los custom fields
  * https://adambalee.com/search-wordpress-by-custom-fields-without-a-plugin/
