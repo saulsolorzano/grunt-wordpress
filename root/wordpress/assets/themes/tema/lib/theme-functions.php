@@ -123,20 +123,36 @@ function remove_recent_comments_style() {
  * Agregar permisos a los usuarios Editor para administrar usuarios.
  *  */
 
-function add_cap_editor(){
+function add_cap_editor() {
     $perfil = get_role('editor');
     $perfil->add_cap('edit_users');
     $perfil->add_cap('delete_users');
     $perfil->add_cap('create_users');
     $perfil->add_cap('list_users');
-    $perfil->add_cap('remove_users');
-    $perfil->add_cap('add_users');
+    $perfil->remove_cap('remove_users');
+    $perfil->remove_cap('add_users');
     $perfil->add_cap('promote_users');
-    $perfil->add_cap('add_users');
+    $perfil->remove_cap('add_users');
     // Editar opciones del tema
     $perfil->add_cap('edit_theme_options');
 }
-add_action( 'admin_init', 'add_cap_editor');
+add_action('admin_init', 'add_cap_editor');
+
+add_action('admin_init', 'user_profile_fields_disable');
+function user_profile_fields_disable() {
+    global $pagenow;
+    if ($pagenow ==='users.php' || $pagenow === 'user-new.php') {
+        add_action( 'admin_footer', 'user_list_fields_disable_js' );
+        return;
+    }
+    if ($pagenow!=='profile.php' && $pagenow!=='user-edit.php') {
+        return;
+    }
+    if (current_user_can('administrator')) {
+        return;
+    }
+    add_action( 'admin_footer', 'user_profile_fields_disable_js' );
+}
 
 /**
  * Funciones para poder indexar en el buscador los custom fields
