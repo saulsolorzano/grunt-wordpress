@@ -78,7 +78,7 @@ class ContentType {
  * @param  [type] $slug  [description]
  * @return [type]        [description]
  */
-function register_taxonomies($sitio, $name, $type, $slug) {
+function register_taxonomies($sitio, $name, $type, $slug, $box = true) {
 //    return;
     $labels_cat = array(
         'name' => _x($name , 'Taxonomy General Name', $sitio),
@@ -101,6 +101,7 @@ function register_taxonomies($sitio, $name, $type, $slug) {
         'labels' => $labels_cat,
         'hierarchical' => true,
         'public' => true,
+        'meta_box_cb' => $box,
         'show_ui' => true,
         'show_admin_column' => true,
         'show_in_nav_menus' => true,
