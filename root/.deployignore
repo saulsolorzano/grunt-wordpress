@@ -1,5 +1,7 @@
 ## Directories to ignore 
-**/themes/{%= name %}/scss/ 
+**/themes/{%= name %}/scss/
+**/themes/{%= name %}/svgs/
+**/themes/{%= name %}/js/plugins/
 log/** 
 config/**  
 ## Files to ignore  
@@ -7,3 +9,4 @@ config/**
 **/themes/{%= name %}/bower.json
 **/themes/{%= name %}/package.json
 **/themes/{%= name %}/robots.txt
+**/themes/{%= name %}/js/main.js
