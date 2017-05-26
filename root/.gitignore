@@ -44,6 +44,28 @@ bower_components
 sitemap.xml.gz
 */asset/advanced-cache.php
 */asset/wp-cache-config.php
+*/index.php
+*/license.txt
+*/licencia.txt
+*/readme.html
+*/wp-activate.php
+*/wp-admin/
+*/wp-blog-header.php
+*/wp-comments-post.php
+*/wp-config-sample.php
+*/wp-config.php
+*/wp-cron.php
+*/wp-includes/
+*/wp-links-opml.php
+*/wp-load.php
+*/wp-login.php
+*/wp-mail.php
+*/wp-settings.php
+*/wp-signup.php
+*/wp-trackback.php
+*/.htaccess
+*/xmlrpc.php
+*/assets/themes/[[tema]]/config.codekit3
 
 # Configuración de ambiente local de desarrollo #
 nbproject/
