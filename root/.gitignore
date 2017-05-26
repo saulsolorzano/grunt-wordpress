@@ -68,5 +68,3 @@ sitemap.xml.gz
 */xmlrpc.php
 */assets/themes/{%= name %}/config.codekit3
 
-# Configuración de ambiente local de desarrollo #
-nbproject/
