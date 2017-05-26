@@ -1,0 +1,9 @@
+## Directories to ignore 
+**/themes/[[tema]]/scss/ 
+log/** 
+config/**  
+## Files to ignore  
+**/themes/[[tema]]/Gruntfile.js
+**/themes/[[tema]]/bower.json
+**/themes/[[tema]]/package.json
+**/themes/[[tema]]/robots.txt
