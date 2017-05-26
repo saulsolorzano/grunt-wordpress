@@ -15,12 +15,12 @@ Thumbs.db
 nbproject/
 
 # cache de sass dentro del tema y la maquetación #
-wp-content/themes/[[tema]]/.sass-cache/
+wp-content/themes/{%= name %}/.sass-cache/
 maquetacion/.sass-cache/
 
 
 # Cache de codekit #
-wp-content/themes/[[tema]]/.codekit-cache/
+wp-content/themes/{%= name %}/.codekit-cache/
 config.codekit
 
 # Descargas de NPM #
