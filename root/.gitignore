@@ -15,12 +15,12 @@ Thumbs.db
 nbproject/
 
 # cache de sass dentro del tema y la maquetación #
-wp-content/themes/{%= name %}/.sass-cache/
+*/asset/themes/{%= name %}/.sass-cache/
 maquetacion/.sass-cache/
 
 
 # Cache de codekit #
-wp-content/themes/{%= name %}/.codekit-cache/
+*/asset/themes/{%= name %}/.codekit-cache/
 config.codekit
 
 # Descargas de NPM #
@@ -30,19 +30,42 @@ node_modules
 bower_components
 
 # Carpetas de Wordpress que no necesitamos #
-wordpress/wp-content/upgrade/
-wordpress/wp-content/uploads/
-wordpress/wp-content/plugins/
-wordpress/wp-content/backup-db/
-wordpress/wp-content/advanced-cache.php
-wordpress/wp-content/wp-cache-config.php
-wordpress/wp-content/blogs.dir/
+*/asset/upgrade/
+*/asset/uploads/
+*/asset/backup-db/
+*/asset/blogs.dir/
+*/asset/cache/
+*/asset/backups/
+*/wp-includes/
+*/wp-admin/
+
+# Archivos que no necesitamos #
 *.log
-wordpress/wp-content/cache/
-wordpress/wp-content/backups/
 sitemap.xml.gz
-wordpress/wp-includes
-wordpress/wp-admin
+*/asset/advanced-cache.php
+*/asset/wp-cache-config.php
+*/index.php
+*/license.txt
+*/licencia.txt
+*/readme.html
+*/wp-activate.php
+*/wp-admin/
+*/wp-blog-header.php
+*/wp-comments-post.php
+*/wp-config-sample.php
+*/wp-config.php
+*/wp-cron.php
+*/wp-includes/
+*/wp-links-opml.php
+*/wp-load.php
+*/wp-login.php
+*/wp-mail.php
+*/wp-settings.php
+*/wp-signup.php
+*/wp-trackback.php
+*/.htaccess
+*/xmlrpc.php
+*/assets/themes/{%= name %}/config.codekit3
 
 # Configuración de ambiente local de desarrollo #
 nbproject/
