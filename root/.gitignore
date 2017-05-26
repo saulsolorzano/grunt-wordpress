@@ -15,12 +15,12 @@ Thumbs.db
 nbproject/
 
 # cache de sass dentro del tema y la maquetación #
-wp-content/themes/[[tema]]/.sass-cache/
+*/asset/themes/[[tema]]/.sass-cache/
 maquetacion/.sass-cache/
 
 
 # Cache de codekit #
-wp-content/themes/[[tema]]/.codekit-cache/
+*/asset/themes/[[tema]]/.codekit-cache/
 config.codekit
 
 # Descargas de NPM #
@@ -30,19 +30,20 @@ node_modules
 bower_components
 
 # Carpetas de Wordpress que no necesitamos #
-wordpress/wp-content/upgrade/
-wordpress/wp-content/uploads/
-wordpress/wp-content/plugins/
-wordpress/wp-content/backup-db/
-wordpress/wp-content/advanced-cache.php
-wordpress/wp-content/wp-cache-config.php
-wordpress/wp-content/blogs.dir/
+*/asset/upgrade/
+*/asset/uploads/
+*/asset/backup-db/
+*/asset/blogs.dir/
+*/asset/cache/
+*/asset/backups/
+*/wp-includes/
+*/wp-admin/
+
+# Archivos que no necesitamos #
 *.log
-wordpress/wp-content/cache/
-wordpress/wp-content/backups/
 sitemap.xml.gz
-wordpress/wp-includes
-wordpress/wp-admin
+*/asset/advanced-cache.php
+*/asset/wp-cache-config.php
 
 # Configuración de ambiente local de desarrollo #
 nbproject/
