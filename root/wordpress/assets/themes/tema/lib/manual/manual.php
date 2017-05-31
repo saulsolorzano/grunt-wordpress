@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @package Manual
+ * @version 0.3
+ */
 /*
   Plugin Name: Manual de uso
   Description: Manual de creación y mantención de contenidos.
@@ -42,7 +47,10 @@ function wp_template_manual() {
 
     add_acf_manual();
     add_menu_page('Manual de creación y mantención de contenidos', 'Manual', 'edit_posts', 'manual', 'wp_template_manual_view', 'dashicons-welcome-learn-more');
-    if (is_super_admin(get_current_user_id())) {
+    
+    $current_user = wp_get_current_user();
+    
+    if ( is_super_admin($current_user->ID) || $current_user->user_email == 'ricardo@reactor.cl' || $current_user->user_email == 'camila.forno@reactor.cl' ) {
         acf_add_options_page(array(
             'page_title' => 'Opciones del Manual',
             'menu_title' => 'Opciones del Manual',
@@ -54,7 +62,7 @@ function wp_template_manual() {
     }
     // Archivo para respaldar el manual
     if (!file_exists(get_template_directory() . '/lib/manual/json/manual.json')) {
-
+        
         if (!mkdir(get_template_directory() . '/lib/manual/json/', 0755, true)) {
             die('Fallo al crear la carpeta del diccionario de respaldo.');
         } else {
