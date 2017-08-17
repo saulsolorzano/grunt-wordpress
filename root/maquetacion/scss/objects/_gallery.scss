@@ -1,0 +1,253 @@
+/*------------------------------------*\
+			$GALLERY
+\*------------------------------------*/
+$gallery-background-color: #f6f6f6;
+$btn-close: #fff;
+$counter: #fff;
+$max-width: 900px;
+$detail: #fff;
+$gallery-color: #fff;
+// Overlay
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	z-index: 1200;
+	padding: 0;
+	background: $gallery-background-color;
+	@include respond-to(desktop) {
+		padding: 0;
+	}
+	&.overlay-is-open {
+		display: flex;
+		flex-flow: wrap row;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.overlay__container {
+	// max-width: 880px;
+	// height: 500px;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+}
+.overlay__close {
+	position: absolute;
+	top: -1px;
+	right: -1px;
+	background: 0;
+	width: 40px;
+	height: 40px;
+	border: 0;
+	z-index: $level2;
+	transition: 300ms ease-in-out;
+	@include respond-to(desktop) {
+		top: 40px;
+		width: 60px;
+		height: 60px;
+	}
+	&:active, &:focus {
+		outline: 0;
+	}
+	svg {
+		fill: $btn-close;
+		width: 26px;
+		height: 26px;
+		@include respond-to(desktop) {
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+// Post
+.gallery-post {
+	max-width: $max-width;
+	width: 100%;
+	margin: 0 auto 20px;
+	position: relative;
+	&::before {
+		content: '';
+		@include cover;
+		background-color: rgba(black, .2);
+	}
+	img {
+		width: 100%;
+	}
+}
+.gallery-post__trigger {
+	@include center;
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	@include respond-to(tablet) {
+		width: 100px;
+		height: 100px;
+	}
+	svg {
+		fill: white;
+		width: 50px;
+		height: 50px;
+		@include respond-to(tablet) {
+			width: 100px;
+			height: 100px;
+		}
+	}
+}
+.gallery-slider {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+.gallery-container {
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	&::before,
+	&::after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+	&::after {
+		clear: both;
+	}
+}
+.gallery-image {
+	height: 100%;
+	display: none;
+	&:first-child {
+		display: block;
+	}
+}
+.gallery-image__container {
+	display: flex;
+	flex-flow: wrap column;
+	justify-content: space-between;
+	height: 100%;
+	@include respond-to(desktop) {
+		flex-flow: wrap row;
+	}
+}
+.gallery-image__img {
+	width: 100%;
+	height: 90%;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include respond-to(tablet) {
+		border-right: 1px solid $detail;
+		height: 70%;
+	}
+	@include respond-to(desktop) {
+		padding: 0 60px;
+		height: auto;
+		width: 75%;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+.gallery-image__info {
+	width: 100%;
+	height: 45%;
+	position: relative;
+	@include respond-to(tablet) {
+		height: 30%;
+	}
+	@include respond-to(desktop) {
+		width: 25%;
+		height: auto;
+	}
+}
+.gallery-image__info__container {
+	width: 100%;
+	padding: 0 0 0 20px;
+	@include respond-to(desktop) {
+		right: 0;
+		position: absolute;
+		bottom: 215px;
+	}
+}
+.gallery-image__info__title {
+	color: $gallery-color;
+	padding-top: 20px;
+	border-top: 1px solid $gallery-color;
+	@include respond-to(desktop) {
+		border-top: 0;
+		border-bottom: 1px solid $gallery-color;
+		padding: 0 45px 70px 8px;
+	}
+}
+.gallery-image__info__label {
+	padding-left: 20px;
+	margin-top: 37px;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxMiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNiAwQzIuNjkyIDAgMCAyLjY0MyAwIDUuODljMCAuODQ4LjE3NyAxLjY1Ny41MjUgMi40MDUgMS41IDMuMjIzIDQuMzc2IDYuNjI1IDUuMjIyIDcuNTkxYS4zMzcuMzM3IDAgMCAwIC41MDYgMGMuODQ2LS45NjYgMy43MjItNC4zNjggNS4yMjItNy41OUE1LjY1NSA1LjY1NSAwIDAgMCAxMiA1Ljg5QzEyIDIuNjQzIDkuMzA4IDAgNiAwem0wIDguOTVjLTEuNzE5IDAtMy4xMTctMS4zNzItMy4xMTctMy4wNiAwLTEuNjg3IDEuMzk4LTMuMDYgMy4xMTctMy4wNiAxLjcxOCAwIDMuMTE2IDEuMzczIDMuMTE2IDMuMDYgMCAxLjY4OC0xLjM5OCAzLjA2LTMuMTE2IDMuMDZ6IiBmaWxsPSIjNWM1YjYwIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=);
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+.gallery-extras {
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+	right: 0;
+	z-index: $level5;
+	@include respond-to(desktop) {
+		bottom: 40px;
+		width: calc(25% - 20px);
+	}
+	.flex-direction-nav {
+		display: flex;
+		flex-flow: wrap row;
+		@include less-than(tablet) {
+			justify-content: flex-end;
+		}
+		li {
+			margin-right: 15px;
+		}
+		a {
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			background-color: #ffffff;
+			box-shadow: 0 0 30px 10px rgba(119, 119, 119, 0.2);
+			text-align: center;
+			transition: 300ms ease-in-out;
+			display: block;
+			&:hover {
+				background-color: darken(#f1f1f1, 15%);
+			}
+		}
+		svg {
+			transition: 300ms ease-in-out;
+			width: 15px;
+			height: 25px;
+			fill: #222324;
+			@include respond-to(desktop) {
+				fill: $gallery-color;
+			}
+		}
+	}
+}
+.gallery__counter {
+	margin-bottom: 10px;
+	color: $counter;
+	@include font-size(14px, 22px);
+	@include less-than(desktop) {
+		padding-right: 20px;
+		text-align: right;
+	}
+}
+.gallery__counter__sep {
+	padding: 0 2px;
+}
+.gallery__counter__sep, .gallery__counter__total {
+	opacity: .5;
+}
