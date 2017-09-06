@@ -47,7 +47,7 @@ if (!class_exists('acf')) {
 
 if (!class_exists('AC_Yoast_SEO_ACF_Content_Analysis')) {
     add_action('admin_notices', function() {
-        $link = na_action_link('acf-content-analysis-for-yoast-seo/yoast-seo-acf-content-analysis.php', 'activate');
+        $link = na_action_link('acf-content-analysis-for-yoast-seo/yoast-acf-analysis.php', 'activate');
         echo '<div class="error"><p>ACF Content Analysis for Yoast SEO not activated. Make sure you activate the plugin in <a href="' . esc_url($link) . '">Activate ACF Content Analysis for Yoast SEO</a></p></div>';
     });
     return;
