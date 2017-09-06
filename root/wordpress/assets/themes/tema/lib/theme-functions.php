@@ -224,3 +224,21 @@ function cf_search_distinct( $where ) {
 
     return $where;
 }
+
+/**
+ * Get activation or deactivation link of a plugin
+ *
+ * @author Nazmul Ahsan <mail@nazmulahsan.me>
+ * @param string $plugin plugin file name
+ * @param string $action action to perform. activate or deactivate
+ * @return string $url action url
+ */
+function na_action_link($plugin, $action = 'activate') {
+    if (strpos($plugin, '/')) {
+        $plugin = str_replace('\/', '%2F', $plugin);
+    }
+    $url = sprintf(admin_url('plugins.php?action=' . $action . '&plugin=%s&plugin_status=all&paged=1&s'), $plugin);
+    $_REQUEST['plugin'] = $plugin;
+    $url = wp_nonce_url($url, $action . '-plugin_' . $plugin);
+    return $url;
+}
