@@ -13,7 +13,7 @@ The extension is installable via composer:
 ```json
 {
     "require": {
-        "asm89/twig-cache-extension": "~0.1"
+        "asm89/twig-cache-extension": "~1.0"
     }
 }
 ```
@@ -34,6 +34,33 @@ use Asm89\Twig\CacheExtension\CacheStrategy\LifetimeCacheStrategy;
 use Asm89\Twig\CacheExtension\Extension as CacheExtension;
 
 $cacheProvider  = new DoctrineCacheAdapter(new ArrayCache());
+$cacheStrategy  = new LifetimeCacheStrategy($cacheProvider);
+$cacheExtension = new CacheExtension($cacheStrategy);
+
+$twig->addExtension($cacheExtension);
+```
+
+### Want to use a PSR-6 cache pool?
+
+Instead of using the default `DoctrineCacheAdapter` the extension also has 
+a `PSR-6` compatible adapter. You need to instantiate one of the cache pool
+implementations as can be found on: http://php-cache.readthedocs.io/en/latest/
+
+Example: Making use of the `ApcuCachePool` via the `PsrCacheAdapter`:
+
+```bash
+composer require cache/apcu-adapter
+```
+
+```php
+<?php
+
+use Asm89\Twig\CacheExtension\CacheProvider\PsrCacheAdapter;
+use Asm89\Twig\CacheExtension\CacheStrategy\LifetimeCacheStrategy;
+use Asm89\Twig\CacheExtension\Extension as CacheExtension;
+use Cache\Adapter\Apcu\ApcuCachePool;
+
+$cacheProvider  = new PsrCacheAdapter(new ApcuCachePool());
 $cacheStrategy  = new LifetimeCacheStrategy($cacheProvider);
 $cacheExtension = new CacheExtension($cacheStrategy);
 
@@ -93,6 +120,14 @@ will change as the value for which the key is generated changes.
 For example: entities containing a last update time, would include a timestamp
 in the key. For an interesting blog post about this type of caching see:
 http://37signals.com/svn/posts/3113-how-key-based-cache-expiration-works
+
+### Blackhole
+
+Strategy for development mode.
+
+In development mode it often not very useful to cache fragments. The blackhole
+strategy provides an easy way to not cache anything it all. It always generates
+a new key and does not fetch or save any fragments.
 
 #### Setup
 

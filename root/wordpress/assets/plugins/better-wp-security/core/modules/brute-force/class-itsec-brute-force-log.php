@@ -44,10 +44,7 @@ final class ITSEC_Brute_Force_Log extends ITSEC_WP_List_Table {
 	 *
 	 **/
 	function column_host( $item ) {
-		if ( ! class_exists( 'ITSEC_Lib_IP_Tools' ) ) {
-			$itsec_core = ITSEC_Core::get_instance();
-			require_once( dirname( $itsec_core->get_plugin_file() ) . '/core/lib/class-itsec-lib-ip-tools.php' );
-		}
+		require_once( ITSEC_Core::get_core_dir() . '/lib/class-itsec-lib-ip-tools.php' );
 
 		$r = array();
 		if ( ! is_array( $item['host'] ) ) {
@@ -55,7 +52,7 @@ final class ITSEC_Brute_Force_Log extends ITSEC_WP_List_Table {
 		}
 		foreach ( $item['host'] as $host ) {
 			if ( ITSEC_Lib_IP_Tools::validate( $host ) ) {
-				$r[] = '<a href="http://www.traceip.net/?query=' . urlencode( $host ) . '" target="_blank">' . esc_html( $host ) . '</a>';
+				$r[] = '<a href="' . esc_url( ITSEC_Lib::get_trace_ip_link( $host ) ) . '" target="_blank" rel="noopener noreferrer">' . esc_html( $host ) . '</a>';
 			}
 		}
 		$return = implode( '<br />', $r );

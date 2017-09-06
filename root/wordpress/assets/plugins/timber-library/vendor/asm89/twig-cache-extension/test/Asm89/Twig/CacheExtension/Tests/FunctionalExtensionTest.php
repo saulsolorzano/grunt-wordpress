@@ -61,7 +61,6 @@ class FunctionalExtensionTest extends \PHPUnit_Framework_TestCase
         $loader = new Twig_Loader_Filesystem(__DIR__ . '/fixtures/');
         $twig = new Twig_Environment($loader);
 
-        $cache = $this->createCacheProvider();
         $cacheExtension = new Extension($this->createCacheStrategy($cacheStrategyName));
 
         $twig->addExtension($cacheExtension);
@@ -133,13 +132,13 @@ class FunctionalExtensionTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Twig_Error_Runtime
-     * @expectedExceptionMessage An exception has been thrown during the rendering of a template ("No strategy key found in value.") in "ics_no_key.twig" at line 1.
+     * @expectedExceptionMessage An exception has been thrown during the rendering of a template ("No strategy key found in value.")
      */
     public function testIndexedChainingStrategyNeedsKey()
     {
         $twig = $this->createTwig('indexed');
 
-        $rendered = $twig->render('ics_no_key.twig', array('value' => $this->getValue('asm89', 1)));
+        $twig->render('ics_no_key.twig', array('value' => $this->getValue('asm89', 1)));
     }
 
     public function testAnnotationExpression()
@@ -162,6 +161,7 @@ class KeyGenerator implements KeyGeneratorInterface
 
 class Value
 {
+    private $value;
     private $updatedAt;
 
     public function __construct($value, $updatedAt)
