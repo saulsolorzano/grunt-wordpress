@@ -67,4 +67,4 @@ sitemap.xml.gz
 */.htaccess
 */xmlrpc.php
 */assets/themes/{%= name %}/config.codekit3
-
+*/assets/mu-plugins/
