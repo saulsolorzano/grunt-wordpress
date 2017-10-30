@@ -15,12 +15,12 @@ Thumbs.db
 nbproject/
 
 # cache de sass dentro del tema y la maquetación #
-*/asset/themes/{%= name %}/.sass-cache/
+*/assets/themes/{%= name %}/.sass-cache/
 maquetacion/.sass-cache/
 
 
 # Cache de codekit #
-*/asset/themes/{%= name %}/.codekit-cache/
+*/assets/themes/{%= name %}/.codekit-cache/
 config.codekit
 
 # Descargas de NPM #
@@ -30,22 +30,22 @@ node_modules
 bower_components
 
 # Carpetas de Wordpress que no necesitamos #
-*/asset/upgrade/
-*/asset/uploads/
-*/asset/mu-plugins/
+*/assets/upgrade/
+*/assets/uploads/
+*/assets/mu-plugins/
 */assets/plugins/*/cache/
-*/asset/backup-db/
-*/asset/blogs.dir/
-*/asset/cache/
-*/asset/backups/
+*/assets/backup-db/
+*/assets/blogs.dir/
+*/assets/cache/
+*/assets/backups/
 */wp-includes/
 */wp-admin/
 
 # Archivos que no necesitamos #
 *.log
 sitemap.xml.gz
-*/asset/advanced-cache.php
-*/asset/wp-cache-config.php
+*/assets/advanced-cache.php
+*/assets/wp-cache-config.php
 */index.php
 */license.txt
 */licencia.txt
