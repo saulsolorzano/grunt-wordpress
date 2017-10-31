@@ -62,20 +62,22 @@ function wp_template_manual() {
     }
     // Archivo para respaldar el manual
     if (!file_exists(get_template_directory() . '/lib/manual/json/manual.json')) {
-        
-        if (!mkdir(get_template_directory() . '/lib/manual/json/', 0755, true)) {
-            die('Fallo al crear la carpeta del diccionario de respaldo.');
-        } else {
+        try {
+            wp_mkdir_p(get_template_directory() . '/lib/manual/json/');
             file_put_contents(get_template_directory() . '/lib/manual/json/manual.json', '', NULL);
+        } catch (Exception $ex) {
+            die('Fallo al crear la carpeta del diccionario de respaldo. ' . $ex->getMessage());
         }
     }
 
     // Archivo para el manual
     if (!file_exists(WP_CONTENT_DIR . '/uploads/manual/manual.json')) {
-        if (!mkdir(WP_CONTENT_DIR . '/uploads/manual/', 0755, true)) {
-            die('Fallo al crear la carpeta del diccionario.');
-        } else {
+        try {
+            wp_mkdir_p(WP_CONTENT_DIR . '/uploads/');
+            wp_mkdir_p(WP_CONTENT_DIR . '/uploads/manual/');
             file_put_contents(WP_CONTENT_DIR . '/uploads/manual/manual.json', '', NULL);
+        } catch (Exception $ex) {
+            die('Fallo al crear la carpeta del diccionario. ' . $ex->getMessage());
         }
     }
 }
