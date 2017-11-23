@@ -1,4 +1,5 @@
 (function ( $ ) {
+    var $window = $(window);
     function popupLinks() {
         var $trigger = $('.js-popup');
         $trigger.on('click', function (event) {

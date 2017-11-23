@@ -20,12 +20,16 @@ function mb_remove_script_version($src) {
  * Registrando JS para front de la página - Footer
  */
 function ss_scripts() {
-    if (!is_admin()) {
+    if ( ! is_admin() ) {
         wp_deregister_script('jquery');
         wp_deregister_script('jquery-migrate');
     }
-    $main_js = filemtime(get_stylesheet_directory() . '/js/app.min.js');
-    wp_register_script('main-script', get_template_directory_uri() . '/js/app.min.js', array(), '1.' . date("Ymd", $main_js) . '.' . date("His", $main_js), true);
+    $main_js = filemtime(get_stylesheet_directory() . '/js/app.js');
+    wp_register_script('manifest-script', get_template_directory_uri() . '/js/manifest.js', array(), '1.0.0', true);
+    wp_register_script('vendor-script', get_template_directory_uri() . '/js/vendor.js', array(), '1.0.0', true);
+    wp_register_script('main-script', get_template_directory_uri() . '/js/app.js', array(), '1.'.date ("Ymd", $main_js).'.'.date ("His", $main_js), true);
+    wp_enqueue_script('manifest-script');
+    wp_enqueue_script('vendor-script');
     wp_enqueue_script('main-script');
 }
 

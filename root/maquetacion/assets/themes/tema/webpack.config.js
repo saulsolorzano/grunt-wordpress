@@ -3,6 +3,7 @@ const webpack              = require('webpack')
 const WebpackChunkHash     = require('webpack-chunk-hash')
 const ChunkManifestPlugin  = require('chunk-manifest-webpack-plugin')
 const UglifyJSPlugin       = require('uglifyjs-webpack-plugin')
+const SvgStore             = require('webpack-svgstore-plugin')
 
 module.exports = {
     context: path.resolve(__dirname, 'js'),
@@ -20,7 +21,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: ['babel-loader', 'webpack-strip-block']
             }
         ]
     },
@@ -30,6 +31,19 @@ module.exports = {
             minChunks: (module) => {
                 console.log(module.resource)
                 return module.resource && (/node_modules/).test(module.resource)
+            }
+        }),
+        new SvgStore({
+            svgoOptions: {
+                plugins: [
+                    { removeTitle: true }
+                ]
+            },
+            name: '[hash].icons.svg',
+            prefix: 'shape-',
+            cleanup: true,
+            svg: {
+                style: "display: none;"
             }
         }),
         new webpack.optimize.CommonsChunkPlugin({
