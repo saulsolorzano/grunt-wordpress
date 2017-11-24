@@ -20,10 +20,8 @@
     "webpack-svgstore-plugin": "^4.0.1"
   },
   "dependencies": {
-    "fitvids": "^2.0.0",
-    "flexslider": "^2.6.4",
     "jquery": "^3.2.1",
-    "parsleyjs": "^2.7.2",
-    "swiper": "^4.0.5"
+    "flexslider": "^2.6.4",
+    "parsleyjs": "^2.7.2"
   }
 }
