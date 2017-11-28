@@ -46,7 +46,7 @@ function compilar_manual() {
 function wp_template_manual() {
 
     add_acf_manual();
-    add_menu_page('Manual de creación y mantención de contenidos', 'Manual', 'edit_posts', 'manual', 'wp_template_manual_view', 'dashicons-welcome-learn-more');
+    add_menu_page('Manual de creación y mantención de contenidos', 'Manual', 'edit_posts', 'manual', 'wp_template_manual_view', 'dashicons-book-alt');
     
     $current_user = wp_get_current_user();
     
